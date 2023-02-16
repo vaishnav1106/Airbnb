@@ -2,7 +2,14 @@
 
 
 /* basic style */
+body
+{
+    background-color:white;
+    margin:0;
+    padding:0;
+    
 
+}
 .main
 {  
    background-color:#d6d5d563  ;
@@ -13,7 +20,7 @@
    font-size: 16px;
    text-align: center;
    z-index: 1;
-   
+   font-family:CircularStd-Black; 
 }   
 .main span
 { 
@@ -29,9 +36,10 @@ header
 {
     
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
+    flex:1 410%;
+    border:  1px solid #ccc;
+
+    padding: 5px;
     background: rgb(235, 235, 235);
     position:sticky;
     top:0px;
@@ -42,8 +50,8 @@ header
 
 .logo img
 {
-  margin: 0 35px;
-  padding: 0 20px;
+  margin: 0 5px;
+  padding: 0 10px;
   align-items: first baseline;
   width: 100px;
   margin-top: 15px;
@@ -51,77 +59,104 @@ header
 
 .center 
 {
-  display: flex;
-  margin-left: 13%;
   align-items: center;
+  display: flex;
+  margin-left:280px;
   justify-content: center;
   overflow: hidden;
 }
 
-.curve-border 
+.curve-border   /*the header middle group button's section*/
 {
-
 border-radius: 50px;
 border:  1px solid #ccc;
-padding: 4px 20px;
+padding-right: 10px;
 display: flex;
-width: 450px;
+width: 315px;
+height: 35px;
 position: relative;
 overflow: hidden;
 }
-.curve-border button
+.curve-border button  /*the header middle group button*/
 {
 border:none;
-background: none;
-padding:12px 45px;
+padding:8px 17px;
 cursor: pointer;
 }
-.curve-border img
-{
-width: 50px;
-margin-top: 3px;
+/* pseudo */
 
+/*we've added two pseudo-elements to the .button-group element using the ::before and ::after selectors. 
+  We've positioned the pseudo-elements using position: absolute,
+  and set their top and bottom values to match the padding of the button group.
+  We've used the left property to position the first pseudo-element between the first and second buttons, 
+  and the second pseudo-element between the second and third buttons .
+  We've set the width property of both pseudo-elements to 1px to create vertical lines, 
+  and we've given them a background-color of black to make them visible. */
+
+.curve-border::before,
+.curve-border::after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  width: 1px;
+  background-color: black;
 }
 
-.right 
+.curve-border::before {
+   left: calc(26% + 5px); /* using the calc() function to calculate the correct position */
+  opacity: 40%;
+}
+
+.curve-border::after {
+  left: calc(54% + 5px);
+  opacity: 40%;
+}
+/*end  pseudo */
+.curve-border img
+{
+width: 35px;
+margin: px ;
+cursor: pointer;
+}
+
+.right  /* the right side buttons iin the header*/
 {
 display: flex;
 align-items: center;
-padding: 0 30px;
-/* overflow: hidden; */
+padding: 0 80px;
+width: 10px 10px;
+
 
 }
 .right #globe
 {
-width: 25px;
+width: 20px;
 cursor: pointer;
-padding-left: 200px;
+padding-left: 15.4%;
 position: absolute;
 }
 
-.icon
-{
-text-decoration: underline;
-overflow: hidden;
-}
 .right .icon-group 
 {
 display: flex;
 align-items: center;
-border: 1px solid #777676;
+border: 1px groove #777676;
 border-radius:40px;
-padding: 5px 8px;
-margin-left: 50px;
+padding: 5px ;
+margin-left: 17.5%;
 cursor: pointer;
-position: relative;
+position:absolute;
 }
-/* .icon-group 
+
+.right .button2
 {
-display: inline;
-margin: 30px;
-overflow: hidden;
-margin-right: -40px;
-} */
+margin-right: 0%;
+padding-left: 1px;
+color: #222222;
+text-decoration: none;
+
+} 
 .icon-group img
 {
 width:25px; 
@@ -137,34 +172,25 @@ border-radius: 20px;
 margin-right: 10px;
 
 }
-.right .button2
-{
-margin: 0px auto;
-padding-left: 70px;
-color: #222222;
-text-decoration: none;
-position:relative;
-} 
 
 
-body
-{
-    background-color:white;
-    margin:0;
-    padding:0;
-    font-family:CircularStd-Black;
-    
-    
-}
+
+
 
 /* nav bar */
 nav
 {
     position:sticky;
-    top:106px;
+    top:90px;
     z-index: 1;
     overflow: hidden;
+    border:  1px  #ccc;
    
+}
+.icon
+{
+text-decoration: underline;
+overflow: hidden;
 }
 .container 
  { margin-bottom: 0px;
@@ -177,7 +203,7 @@ nav
   .icon-wrapper 
   {
 
-    margin-top: px;
+    margin-top: 1px;
     display: flex;
     flex-wrap: nowrap;
     transition: margin-left 0.5s;
@@ -270,6 +296,11 @@ nav
  /* grid */
 
 /* grid vs flex base styles */
+#block
+{
+  display: flex;
+  flex-wrap: wrap;
+}
 
 
 article
@@ -304,7 +335,40 @@ article span{
   opacity: 50%;
 }
 
-@media screen and (min-width: 768px){
+
+
+
+footer {
+  background-color: #f7f7f7;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  margin:0px 0px;
+  font-size: 16px;
+  position:sticky;
+  bottom: 0;
+  border:  1px  #ccc;
+}
+
+.footer-left {
+  margin-right: 10px;
+}
+
+.footer-right {
+  display: flex;
+  align-items: center;
+}
+
+.footer-arrow {
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+/* responsive */
+
+@media (max-width: 945px) 
+{ 
+  
   #blocks
   {
     display: flex;
@@ -314,11 +378,43 @@ article span{
 
   article
   {
+  
+  flex: 1 1 30%;
+  width: 100%;
+  height:200px;
+  margin: 2px;
+  padding: 1px 4px ;
+  box-sizing: border-box;
+  margin-bottom: 150px;
+
+
     transition: flex-basis 0.2s linear;
   }
 
-  article .stack
+}
+@media screen and (max-width: 1400px){
+
+  .icon-group
   {
-    flex:0 1 100% ;
+  margin-left: 12.5%; }
+   
+  #blocks
+  {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
   }
-} /* end media 768 */
+
+  article
+  {
+      flex: 1 2 18%;
+      width: 100%;
+      height:200px;
+      margin: 25px;
+      padding: 1px 4px ;
+      box-sizing: border-box;
+      margin-bottom: 150px;
+      transition: flex-basis 0.2s linear;
+      
+  }
+} 
