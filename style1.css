@@ -1,15 +1,10 @@
-/* variables */
-
-
-/* basic style */
 body
 {
     background-color:white;
     margin:0;
     padding:0;
-    
-
 }
+
 .main
 {  
    background-color:#d6d5d563  ;
@@ -22,6 +17,7 @@ body
    z-index: 1;
    font-family:CircularStd-Black; 
 }   
+
 .main span
 { 
   color: #222222;
@@ -31,37 +27,36 @@ body
 {
   color: black;
 }
-
+/* header portion */
 header 
 {
-    
-    display: flex;
-    flex:1 410%;
-    border:  1px solid #ccc;
 
-    padding: 5px;
-    background: rgb(235, 235, 235);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f8f8f8;
+    padding: 20px;
+  
     position:sticky;
     top:0px;
     z-index: 1;
     overflow: hidden;
 }
 
-
+/* logo in header */
 .logo img
 {
-  margin: 0 5px;
-  padding: 0 10px;
-  align-items: first baseline;
-  width: 100px;
-  margin-top: 15px;
+  width: 100%;
+  height:40px;
+  max-width: 200px;
 }
 
+/* button in center  */
 .center 
 {
   align-items: center;
   display: flex;
-  margin-left:280px;
+  margin-left:28%;
   justify-content: center;
   overflow: hidden;
 }
@@ -120,15 +115,22 @@ margin: px ;
 cursor: pointer;
 }
 
-.right  /* the right side buttons iin the header*/
-{
+/* the right side buttons iin the header*/
+
+.right
+{  
 display: flex;
 align-items: center;
-padding: 0 80px;
-width: 10px 10px;
-
-
 }
+/* airbnb your home button */
+.right .button2
+{
+margin-right: 0%;
+padding-left:4em;
+color: #222222;
+text-decoration: none;
+} 
+/* globe icon */
 .right #globe
 {
 width: 20px;
@@ -136,7 +138,7 @@ cursor: pointer;
 padding-left: 15.4%;
 position: absolute;
 }
-
+/* the filter button */
 .right .icon-group 
 {
 display: flex;
@@ -148,40 +150,18 @@ margin-left: 17.5%;
 cursor: pointer;
 position:absolute;
 }
-
-.right .button2
-{
-margin-right: 0%;
-padding-left: 1px;
-color: #222222;
-text-decoration: none;
-
-} 
+/* the filter image  */
 .icon-group img
 {
 width:25px; 
 padding: 1px 2px;
 
 }
-.button 
-{
-background-color: #fff;
-border: 0px solid #ccc;
-padding: 10px 20px;
-border-radius: 20px;
-margin-right: 10px;
-
-}
-
-
-
-
-
 /* nav bar */
 nav
 {
     position:sticky;
-    top:90px;
+    top:84px;
     z-index: 1;
     overflow: hidden;
     border:  1px  #ccc;
@@ -305,7 +285,8 @@ overflow: hidden;
 
 article
 {
-  flex: 1 2 18%;
+  flex: 1 1 18%;
+  flex-wrap: wrap;
   width: 100%;
   height:200px;
   margin: 14px;
@@ -336,7 +317,7 @@ article span{
 }
 
 
-
+/* footer */
 
 footer {
   background-color: #f7f7f7;
@@ -365,56 +346,74 @@ footer {
 }
 
 /* responsive */
-
-@media (max-width: 945px) 
-{ 
+@media screen and (max-width: 1128px)
+{
   
-  #blocks
-  {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
+    .main
+    {
+        text-align: center;
+        font-size:20px;
+    }
 
-  article
-  {
-  
-  flex: 1 1 30%;
-  width: 100%;
-  height:200px;
-  margin: 2px;
-  padding: 1px 4px ;
-  box-sizing: border-box;
-  margin-bottom: 150px;
+    .header
+    {
+        margin:10px;
+    }
+
+     .center
+    {
+       margin-right: 10%;
+       display: flex;
+       
+    }
+    .curve-border button
+    {
+        margin-right: 90%;
+    }
 
 
-    transition: flex-basis 0.2s linear;
-  }
+    .button2
+    {
+        margin-left:.1px;
+    }
+    #globe
+    {
+        align-items:center;
+        margin-left: 2%;
+    }
+
+    /* .icon-group
+    {
+        margin-left: ;
+       
+    } */
 
 }
+
 @media screen and (max-width: 1400px){
 
-  .icon-group
-  {
-  margin-left: 12.5%; }
-   
-  #blocks
-  {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-
-  article
-  {
-      flex: 1 2 18%;
-      width: 100%;
-      height:200px;
-      margin: 25px;
-      padding: 1px 4px ;
-      box-sizing: border-box;
-      margin-bottom: 150px;
-      transition: flex-basis 0.2s linear;
-      
-  }
-} 
+    .icon-group
+    {
+    margin-left: 12.5%; }
+     
+    #blocks
+    {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+  
+    article
+    {
+        flex: 1 2 18%;
+        width: 100%;
+        height:200px;
+        margin: 25px;
+        padding: 1px 4px ;
+        box-sizing: border-box;
+        margin-bottom: 150px;
+        transition: flex-basis 0.2s linear;
+        
+    }
+  } 
+  
