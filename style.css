@@ -1,10 +1,15 @@
+/* variables */
+
+
+/* basic style */
 body
 {
     background-color:white;
     margin:0;
     padding:0;
-}
+    
 
+}
 .main
 {  
    background-color:#d6d5d563  ;
@@ -17,7 +22,6 @@ body
    z-index: 1;
    font-family:CircularStd-Black; 
 }   
-
 .main span
 { 
   color: #222222;
@@ -27,40 +31,50 @@ body
 {
   color: black;
 }
-/* header portion */
+
 header 
 {
-
+    
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #f8f8f8;
-    padding: 20px;
-  
+    flex:1 410%;
+    border:  1px solid #ccc;
+
+    padding: 5px;
+    background: rgb(235, 235, 235);
     position:sticky;
     top:0px;
     z-index: 1;
     overflow: hidden;
 }
 
-/* logo in header */
+
 .logo img
 {
-  width: 100%;
-  height:40px;
-  max-width: 200px;
+  margin: 0 5px;
+  padding: 0 10px;
+  align-items: first baseline;
+  width: 100px;
+  margin-top: 15px;
 }
 
-/* button in center  */
 .center 
 {
   align-items: center;
   display: flex;
-  margin-left:28%;
+  margin-left:380px;
   justify-content: center;
   overflow: hidden;
 }
 
+.button 
+{
+background-color: #fff;
+border: 0px solid #ccc;
+padding: 10px 20px;
+border-radius: 20px;
+margin-right: 10px;
+
+}
 .curve-border   /*the header middle group button's section*/
 {
 border-radius: 50px;
@@ -115,30 +129,33 @@ margin: px ;
 cursor: pointer;
 }
 
-/* the right side buttons iin the header*/
-
-.right
-{  
+.right  /* the right side buttons iin the header*/
+{
 display: flex;
 align-items: center;
+padding: 0 80px;
 }
-/* airbnb your home button */
 .right .button2
 {
-margin-right: 0%;
-padding-left:4em;
+transition: .2s white;
 color: #222222;
 text-decoration: none;
+
 } 
-/* globe icon */
+.right .button2 :hover
+{
+  background-color: #e3ece3; 
+  color: white;
+}
+
+
 .right #globe
 {
 width: 20px;
 cursor: pointer;
-padding-left: 15.4%;
-position: absolute;
+padding-left:2%;
 }
-/* the filter button */
+
 .right .icon-group 
 {
 display: flex;
@@ -146,22 +163,29 @@ align-items: center;
 border: 1px groove #777676;
 border-radius:40px;
 padding: 5px ;
-margin-left: 17.5%;
+margin-left: 14.5%;
 cursor: pointer;
 position:absolute;
 }
-/* the filter image  */
+
+ 
 .icon-group img
 {
 width:25px; 
 padding: 1px 2px;
 
 }
+
+
+
+
+
+
 /* nav bar */
 nav
 {
     position:sticky;
-    top:84px;
+    top:60px;
     z-index: 1;
     overflow: hidden;
     border:  1px  #ccc;
@@ -276,49 +300,31 @@ overflow: hidden;
  /* grid */
 
 /* grid vs flex base styles */
-#block
-{
+
+
+.flex-container {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 3%;
+}
+.flex-item {
+  flex-basis: 24%;
+  height: 300px;
+  margin-bottom: 20%;
+
 }
 
-
-article
+.flex-item img
 {
-  flex: 1 1 18%;
-  flex-wrap: wrap;
-  width: 100%;
-  height:200px;
-  margin: 14px;
-  padding: 1px 4px ;
-  box-sizing: border-box;
-  margin-bottom: 150px;
-
-}
-article img
-{
-  object-fit: cover;
-  margin:5px 2px;
-  height:100%;
-  width:100%; 
-  border-radius: 5%;
+    width:100%;
+    height:100%;
+    border-radius: 5%;
 }
 
 
 
-article h2
-{
-  text-align: left;
-  font-size: 20px;
-  margin: 10px 0;
-}
-article span{
-  opacity: 50%;
-}
-
-
-/* footer */
-
+/* flex end */
 footer {
   background-color: #f7f7f7;
   display: flex;
@@ -346,74 +352,68 @@ footer {
 }
 
 /* responsive */
-@media screen and (max-width: 1128px)
+
+@media only screen and (max-width: 1128px) 
 {
-  
-    .main
-    {
-        text-align: center;
-        font-size:20px;
-    }
-
-    .header
-    {
-        margin:10px;
-    }
-
-     .center
-    {
-       margin-right: 10%;
-       display: flex;
-       
-    }
-    .curve-border button
-    {
-        margin-right: 90%;
-    }
 
 
-    .button2
-    {
-        margin-left:.1px;
-    }
-    #globe
-    {
-        align-items:center;
-        margin-left: 2%;
-    }
 
-    /* .icon-group
-    {
-        margin-left: ;
-       
-    } */
+  .flex-container {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
 
+  .flex-item {
+    flex-basis: 32%;
+    margin-bottom: 17%;
+  }
 }
 
-@media screen and (max-width: 1400px){
 
-    .icon-group
-    {
-    margin-left: 12.5%; }
-     
-    #blocks
-    {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-    }
-  
-    article
-    {
-        flex: 1 2 18%;
-        width: 100%;
-        height:200px;
-        margin: 25px;
-        padding: 1px 4px ;
-        box-sizing: border-box;
-        margin-bottom: 150px;
-        transition: flex-basis 0.2s linear;
-        
-    }
+@media only screen and (max-width: 550px) {
+  .flex-container {
+    flex-direction: column;
+  }
+
+  .flex-item {
+    flex-basis: 100%;
+  }
+}
+
+@media only screen and (max-width: 743px) 
+{
+    .flex-container {
+    flex-wrap: nowrap;
   } 
+  .flex-item {
+    flex-basis: 51%;
+    
+   }  
+
   
+}
+
+
+
+@media only screen and (max-width: 946px) 
+{
+
+  
+  .flex-container {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .flex-item {
+    flex-basis: 46.9%;
+    margin-bottom: 30%;
+
+  }
+}
+ 
+
+
+
+
+
+
